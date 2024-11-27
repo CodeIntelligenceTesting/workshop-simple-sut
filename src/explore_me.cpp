@@ -9,16 +9,17 @@ int exploreMe(int a, int b, string c) {
     if (b >= 2000000) {
       if (b - a < 100000) {
         int n = 23;
-        n <<= 32;
+        n <<= a;
 
         char hello[6] = {'H', 'e', 'l', 'l', 'o', '\0'};
-        char world[20] = {'W', 'o', 'r', 'l', 'd', '!', '\0'};
-        if (c == "FUZZING") {
-          strcpy(world, "exampleWorkshop");
+        char world[8] = {'W', 'o', 'r', 'l', 'd', '!','!', '\0'};
+        if (c.find("FUZZING") != std::string::npos) {
+          strcpy(world, c.c_str());
         }
         else if(c == "seg-fault"){
           char arr[5] = {'a', 'b', 'c', 'd', 'e'};
-          printf("Char at position %d: %c\n", (b-a)/100, arr[(b-a)/100]);
+          int pos = (b-a)/5;
+          printf("Char at position %d: %c\n", pos, arr[pos]);
         }
         printf("%s\n", hello);
         printf("%s\n", world);
