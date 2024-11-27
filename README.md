@@ -1,37 +1,24 @@
 ## Project Description
 
-This is a simple CMake project configured with **cifuzz** and has three 
-Fuzz Test.
+This is a simple CMake project
 
-## Run
-The Fuzz Test should trigger a shift exponent, a stack buffer overflow and a out_of_bounds.
+## Build executable and test cases
 
 ```bash
-cifuzz run my_fuzz_test
+cmake -S . -B build
+cmake --build build
 ```
 
-## Findings
-List all findings
+## Execute binary
+
 ```bash
-cifuzz finding <finding name>
+./build/src/cmake_example 1 1 A
 ```
 
-Obtain information to understand the finding
+## Execute test cases
 
 ```bash
-cifuzz finding <finding name>
-```
-
-## Assess
-Manage the findings
-
-```bash
-cifuzz assess <finding name>
-```
-
-## Coverage
-Calculate the coverage achieved for this project
-
-```bash
-cifuzz coverage my_fuzz_test
+./build/test/explore_me_test
+# or 
+cd build && ctest --verbose
 ```
