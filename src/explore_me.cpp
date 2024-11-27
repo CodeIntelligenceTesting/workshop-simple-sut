@@ -12,13 +12,14 @@ int exploreMe(int a, int b, string c) {
         n <<= 32;
 
         char hello[6] = {'H', 'e', 'l', 'l', 'o', '\0'};
-        char world[20] = {'W', 'o', 'r', 'l', 'd', '!', '\0'};
+        char world[7] = {'W', 'o', 'r', 'l', 'd', '!', '\0'};
         if (c == "FUZZING") {
           strcpy(world, "exampleWorkshop");
         }
         else if(c == "seg-fault"){
           char arr[5] = {'a', 'b', 'c', 'd', 'e'};
-          printf("Char at position %d: %c\n", (b-a)/100, arr[(b-a)/100]);
+          int pos = (b-a)/5;
+          printf("Char at position %d: %c\n", pos, arr[pos]);
         }
         printf("%s\n", hello);
         printf("%s\n", world);
