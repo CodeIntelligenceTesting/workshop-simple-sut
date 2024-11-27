@@ -1,0 +1,41 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/cpp
+{
+	"name": "cifuzz",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"CIFUZZ_CREDENTIALS": "<cifuzz token>"
+		}
+	},
+	"features": {
+		"ghcr.io/devcontainers-community/features/llvm:3": {}
+	},
+	
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ryanluker.vscode-coverage-gutters",
+				"ms-vscode.cpptools",
+				"ms-vscode.cpptools-extension-pack",
+				"jeff-hykin.better-cpp-syntax",
+				"matepek.vscode-catch2-test-adapter"
+			]
+		}
+	}
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "gcc -v",
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
