@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 mcr.microsoft.com/devcontainers/cpp:1-ubuntu-24.04
+FROM mcr.microsoft.com/devcontainers/cpp:1-ubuntu-24.04
 
 # Install APT packages with caching set up according to
 # https://docs.docker.com/engine/reference/builder/#example-cache-apt-packages
